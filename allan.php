@@ -36,9 +36,9 @@
 
 			<h3>Instâncias:</h3>
 
-
 		<?php
 
+			/// Reading every folder in the Main Path.
 			$mainPath = "_Instances/Allan/";
 			$folders = array_slice(scandir($mainPath), 2);
 
@@ -47,6 +47,7 @@
 				echo "<button class=\"accordion\">" . $folder . "</button>";
 				echo "<div class=\"panel\">";
 
+					/// Reading every files present in each folder.
 					$filePath = $mainPath . $folder ."/";
 					$files = array_slice(scandir($filePath), 2);
 					
@@ -59,39 +60,6 @@
 			}
 
 		?>
-
-
-
-
-<!--
-
-			<button class="accordion">10</button>
-			<div class="panel">
-				
-				<?php
-
-					$path = "_Instances/Allan/";
-					$files = array_slice(scandir($path), 2);
-					
-					foreach ($files as $file){
-						echo "<a href =\"" . $path . "/" . $file . "\">" . $file . "</a></br>"; 
-					}
-
-				?>
-
-			</div>
-
-			<button class="accordion">20</button>
-			<div class="panel">
-				<a href="_Instances/Allan/20/assimetrico-20-138-3.txt">Assimétrico (20-138-3)</a>
-			</div>
-
-			<button class="accordion">30</button>
-			<div class="panel">
-				<a href="_Instances/Allan/30/assimetrico-30-180-3.txt">Assimétrico (30-180-3)</a>
-			</div>
-		
-		-->
 
 		</div>
 
