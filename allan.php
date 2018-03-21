@@ -5,7 +5,7 @@
 		<?php
 			include "Controllers/import.php";
 		?>
-		<title>Allan</title>
+		<title>TSP - Passenger and Quota</title>
 
 	</head>
 
@@ -47,12 +47,20 @@
 				echo "<button class=\"accordion\">" . $folder . "</button>";
 				echo "<div class=\"panel\">";
 
-					/// Reading every files present in each folder.
+					/// Reading every file present in each folder.
 					$filePath = $mainPath . $folder ."/";
 					$files = array_slice(scandir($filePath), 2);
 					
 					foreach ($files as $file){
-						echo "<a href =\"" . $filePath . $file . "\">" . $file . "</a></br>"; 
+
+						$fullPath = $filePath . $file;
+
+						echo 
+							"<div class=\"panel_options\">
+								<a href=\"" . $fullPath . "\">" . $file . "</a>
+								<a href=\"download.php?file=" . $fullPath . "\"id=\"download\"> Download</a>
+							</div>";
+
 					}
 
 				echo "</div>";

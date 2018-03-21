@@ -4,10 +4,23 @@ body{
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-.content{
-	margin: 30px;
-	text-align: justify;
-	text-justify: inter-word;
+/* Responsive Text */
+@media screen and (min-width: 801px){
+	.content{
+		margin: auto;
+		width: 60%;
+		padding: 5px;
+		text-align: justify;
+		text-justify: inter-word;
+	}
+}
+
+@media screen and (max-width: 800px){
+	.content{
+		margin: 30px;
+		text-align: justify;
+		text-justify: inter-word;
+	}	
 }
 
 /* Navbar */ 
@@ -83,7 +96,7 @@ body{
     text-align: left;
     outline: none;
     font-size: 15px;
-    transition: 0.4s;
+    transition: 0.2s;
 }
 
 .accordion.active, .accordion:hover {
@@ -102,6 +115,7 @@ body{
 	content: "\2212";
 }
 
+/* Panels */
 .panel {
     padding: 0 18px;
     background-color: #74AFAD;
@@ -113,31 +127,54 @@ body{
 .panel a{
 	color: black;
 	text-decoration: none;
-	transition: 0.4s;
+	transition: 0.1s;
 }
 
 .panel a:hover{
 	background-color: #D9853B
 }
 
+/* Inside the panel*/
+.panel_options{
+	background-color: #74AFAD;
+	color: black;
+	width: 100%;
+	padding: 5px;
+	border: none;
+    text-align: left;
+	outline: none;
+	font-size: 15px;
+	transition: 0.1s;
+}
+
+.panel_options:hover > a{
+	color: #F2F2F2;
+}
+
+.panel_options:hover{
+	background-color: #D9853B;
+}
+
+.panel #download{
+	float: right;
+}
+
 /* Buttons */
 .button{
-	color: #333;
-	background-color: #FFF;
-	border: 1px solid #CCC;
-	border-radius: 6px;
-	display: inline-block;
-	font-family: "Arial";
-	font-size: 16px;
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
+	background-color: #558C89;
+    color: #F2F2F2;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+    transition: 0.2s;
 }
 
 .button:hover{
-	color: #333;
-	background-color: #E6E6E6;
-	border: 1px solid #ADADAD;
+	background-color: #D9853B;
 }
 
 .button:active{
