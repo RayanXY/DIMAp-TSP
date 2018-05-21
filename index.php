@@ -35,6 +35,10 @@
 
 		</div>
 
+		<?php
+			include "Controllers/footer.php";
+		?>
+		
 	</body>
 
 </html>

@@ -3,5 +3,6 @@
 	<a href="#">DIMAp</a>
 	<a href="#">Sobre</a>
 	<a href="#">Contato</a>
+	<a href="administrator.php" class="administrator">Administrator</a>
 	<a href="#" class="icon" onclick="responsive()">&#9776;</a>
 </div>

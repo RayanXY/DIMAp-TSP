@@ -31,3 +31,24 @@ function responsive(){
 	}
 
 }
+
+/// Files
+function myFiles () {
+				
+	var f = document.getElementById("input-button");
+	var text = "";
+
+	if ('files' in f) {
+		if (f.files.length == 0) {
+			text ="Escolha uma arquivo!";
+		} else {
+			for (var i = 0; i < f.files.length; i++) {
+				var file = f.files[i];
+				text += file.name + "; " ;
+			}
+		}
+	}
+
+	document.getElementById("input-text").value = text;
+
+}

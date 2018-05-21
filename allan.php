@@ -58,7 +58,7 @@
 						echo 
 							"<div class=\"panel_options\">
 								<a href=\"" . $fullPath . "\">" . $file . "</a>
-								<a href=\"download.php?file=" . $fullPath . "\"id=\"download\"> Download</a>
+								<a href=\"Controllers/download.php?file=../" . $fullPath . "\"id=\"download\"> Download</a>
 							</div>";
 
 					}
@@ -70,6 +70,10 @@
 		?>
 
 		</div>
+
+		<?php
+			include "Controllers/footer.php";
+		?>
 
 	</body>
 
