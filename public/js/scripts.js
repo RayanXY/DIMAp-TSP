@@ -52,3 +52,41 @@ function myFiles () {
 	document.getElementById("input-text").value = text;
 
 }
+
+/*
+function clearSelect (select) {
+
+	var i;
+	for (i = select.options.length - 1; i >= 1; i--) {
+		select.remove (i);
+	}
+
+}
+
+function selectChange () {
+
+	/// Getting the selected type of instance
+	var select_type = document.getElementById ("instance_type");
+	var select_type_option = select_type.options [select_type.selectedIndex].text;
+
+	/// Filling with the correspondent sizes
+	var select_size = document.getElementById("instance_size");
+	/// Assures no duplicates
+	clearSelect(select_size);
+	/// Creates and adds the option
+	var select_size_option = document.createElement("option");
+	select_size_option.text = select_type_option;
+	select_size.add(select_size_option);
+
+}
+
+function listFolders (path) {
+
+	const main_path = "../_Instances/";
+	const fs = require("fs");
+	alert("Chegou até aqui");
+
+
+}
+
+*/
