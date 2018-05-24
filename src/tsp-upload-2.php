@@ -3,7 +3,7 @@
 	<head>
 		
 		<?php
-			include "Controllers/import.php";
+			include "imports/import.php";
 		?>
 
 		<title>Administrator</title>
@@ -13,53 +13,84 @@
 	<body onload="myFunc();">
 
 		<?php
-			include "Controllers/menu.php";
+			include "../src/imports/menu.php";
 		?>
 
-		<div class="form">
+		<div id="wrapper">
 
-			<h2>Upload de instâncias</h2>
+			<div class="content">
 
-			<form enctype="multipart/form-data" action="Controllers/upload.php" method="POST">
+				<div class="form">
 
-				<p>Instâncias:</p>
-				
-					<input type="text" id="input-text" class="upload-text" readonly>
+					<h2>Upload de instâncias</h2>
 
-					<label class="upload-button">Upload
-						<input type="file" id="input-button" name="userfiles[]" onchange="myFiles ()" multiple>
-					</label>
+					<form enctype="multipart/form-data" action="controllers/upload.php" method="POST">
 
-				<br/>
-				<br/>
+						<p>Instâncias:</p>
+						
+							<input type="text" id="input-text" class="upload-text" readonly>
 
-				<p>Qual o tipo:</p>
-				<select name="instance_size">
-						<option value="" selected >Escolha...</option>
+							<label class="upload-button">Upload
+								<input type="file" id="input-button" name="userfiles[]" onchange="myFiles ()" multiple>
+							</label>
+
+						<br/>
+						<br/>
+
+						<?php
+
+							$instance_type = $_POST["instance_type"];
+
+							echo "<input type = 'text' name='instance_type' value = '" . $instance_type . "' hidden>";
+
+						?>
+
+						<p>De qual tamanho:</p>
+
+						<select name="exists_size" id="size_select">
+								<option value="" selected >Escolha...</option>
+							
+						<?php
+
+							$instance_type = $_POST["instance_type"];
 					
-				<?php
+							$path = "../data/instances/" . $instance_type . "/";
+							$folders = array_slice (scandir($path), 2);
 
-					$instance_type = $_POST["instance_type"];
+							foreach ($folders as $folder) {
+								echo "<option value='".$folder."'>" . $folder . "</option>";	
+							}
 			
-					$path = "_Instances/" . $instance_type . "/";
-					$folders = array_slice (scandir($path), 2);
 
-					foreach ($folders as $folder) {
-						echo "<option value='".$instance_type."/".$folder."'>" . $folder . "</option>";	
-					}
-	
+						?>
+						</select>
 
-				?>
-				</select>
-				
-				<input type="submit" value="Enviar" name="submit"/>
+						Novo tamanho? 
+						<input type="radio" name="new_size" value="yes" onchange = "showText ()">Sim
+						<input type="radio" name="new_size" value="no" onchange = "showText ()" checked>Não
 
-			</form>
+						<br/>
+
+						<div id="new_size_text" style="visibility: hidden">
+							Qual?
+							<input type="text" name="new_size_text" >
+						</div>
+
+						<br/>
+						<br/>
+						
+						<input type="submit" value="Enviar" name="submit"/>
+
+					</form>
+
+				</div>
+
+			</div>
 
 		</div>
 
 		<?php
-			include "Controllers/footer.php";
+			include "../src/imports/footer.php";
 		?>
 
 	</body>

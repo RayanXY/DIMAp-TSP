@@ -3,16 +3,16 @@
 	<head>
 
 		<?php
-			include "Controllers/import.php";
+			include "imports/import.php";
 		?>
-		<title>TSP - Incomplete Ride and Collect Time</title>
+		<title>TSP - Viagem Incompleta e Tempo de Coleta</title>
 
 	</head>
 
 	<body onload="accordion()">
 
 		<?php
-			include "Controllers/menu.php";
+			include "../src/imports/menu.php";
 		?>
 
 		<div class="content">
@@ -29,7 +29,7 @@
 		<?php
 
 			/// Reading every folder in the Main Path.
-			$mainPath = "_Instances/Bruno/";
+			$mainPath = "../data/instances/TSP - Passageiro, Viagem Incompleta e Tempo de Coleta/";
 			$folders = array_slice(scandir($mainPath), 2);
 
 			foreach ($folders as $folder) {
@@ -62,7 +62,7 @@
 		</div>
 
 		<?php
-			include "Controllers/footer.php";
+			include "../src/imports/footer.php";
 		?>
 
 	</body>

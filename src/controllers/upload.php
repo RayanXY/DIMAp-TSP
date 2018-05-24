@@ -1,12 +1,23 @@
 <?php
 
-	if (!empty($_FILES["userfiles"])) {
+	if (!empty($_FILES["userfiles"]) && isset($_POST["submit"])) {
 
 		// Counter
 		$i = 0;
 
+		// Path according to size
+		$new_size = $_POST["new_size"];
+		$exists_size = $_POST["exists_size"];
+		$instance_type = $_POST["instance_type"];
+
+		if ($new_size == "yes") {
+			$target_dir = $_POST["new_size_text"];
+		} else if ($new_size == "no") {
+			$target_dir = $exists_size;
+		}
+
 		// Defining the path to the upload
-		$upload_dir = "../_Instances/" . $_POST["instance_size"]."/";
+		$upload_dir = "../../data/instances/" . $instance_type . "/" . $target_dir."/";
 
 		// Creating the path if not exists
 		if (!file_exists($upload_dir)){
@@ -31,6 +42,6 @@
 
 	}
 
-	header("LOCATION: ../index.php");
+ 	header("LOCATION: ../../public/index.php");
 
 ?>

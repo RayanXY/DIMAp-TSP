@@ -1,13 +1,13 @@
 /// Accordion
-function accordion(){
+function accordion () {
 
-	var acc = document.getElementsByClassName("accordion");
+	var acc = document.getElementsByClassName ("accordion");
 	var i;
 
 	for (i = 0; i < acc.length; i++) {
-		acc[i].addEventListener("click", 
-	  		function() {
-			    this.classList.toggle("active");
+		acc[i].addEventListener ("click", 
+	  		function () {
+			    this.classList.toggle ("active");
 			    var panel = this.nextElementSibling;
 			    if (panel.style.maxHeight){
 			      panel.style.maxHeight = null;
@@ -21,12 +21,12 @@ function accordion(){
 }
 
 /// Responsive page
-function responsive(){
+function responsive () {
 
-	var x = document.getElementById("navbarID");
-	if(x.className === "navbar"){
+	var x = document.getElementById ("navbarID");
+	if (x.className === "navbar") {
 		x.className += " responsive";
-	}else{
+	} else {
 		x.className = "navbar";
 	}
 
@@ -35,7 +35,7 @@ function responsive(){
 /// Files
 function myFiles () {
 				
-	var f = document.getElementById("input-button");
+	var f = document.getElementById ("input-button");
 	var text = "";
 
 	if ('files' in f) {
@@ -49,44 +49,25 @@ function myFiles () {
 		}
 	}
 
-	document.getElementById("input-text").value = text;
+	document.getElementById ("input-text").value = text;
 
 }
 
-/*
-function clearSelect (select) {
+/// Show text hidden
+function showText () {
+ 
+ 	var text = document.getElementById ("new_size_text");
+ 	var select = document.getElementById ("size_select");
 
-	var i;
-	for (i = select.options.length - 1; i >= 1; i--) {
-		select.remove (i);
-	}
+ 	// alert (select_input);
 
-}
-
-function selectChange () {
-
-	/// Getting the selected type of instance
-	var select_type = document.getElementById ("instance_type");
-	var select_type_option = select_type.options [select_type.selectedIndex].text;
-
-	/// Filling with the correspondent sizes
-	var select_size = document.getElementById("instance_size");
-	/// Assures no duplicates
-	clearSelect(select_size);
-	/// Creates and adds the option
-	var select_size_option = document.createElement("option");
-	select_size_option.text = select_type_option;
-	select_size.add(select_size_option);
-
-}
-
-function listFolders (path) {
-
-	const main_path = "../_Instances/";
-	const fs = require("fs");
-	alert("Chegou até aqui");
+ 	if (text.style.visibility === "hidden") {
+ 		text.style.visibility = "visible";
+ 		select.disabled = true;
+ 	} else {
+ 		text.style.visibility = "hidden";
+ 		select.disabled = false;
+ 	}
 
 
 }
-
-*/

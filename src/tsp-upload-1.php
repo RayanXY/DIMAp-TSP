@@ -3,7 +3,7 @@
 	<head>
 		
 		<?php
-			include "Controllers/import.php";
+			include "imports/import.php";
 		?>
 
 		<title>Administrator</title>
@@ -13,39 +13,74 @@
 	<body onload="myFunc();">
 
 		<?php
-			include "Controllers/menu.php";
+			include "../src/imports/menu.php";
 		?>
 
-		<div class="form">
+		<div id="wrapper">
 
-			<h2>Upload de instâncias</h2>
+			<div class="content">
 
-			<form enctype="multipart/form-data" action="upload_instances.php" method="POST">
+				<div class="form">
 
-				<p>Pertence a:</p>
-				<select name="instance_type">
-						<option value="" selected >Escolha...</option>
-				<?php
+					<h2>Upload de instâncias</h2>
 
-					$mainPath = "_Instances/";
-					$folders = array_slice (scandir($mainPath), 2);
+					<form enctype="multipart/form-data" action="tsp-upload-2.php" method="POST">
 
-					foreach ($folders as $folder) {
-						echo "<option value='".$folder."'>" . $folder . "</option>";	
-					}
+						<p>Pertence a:</p>
+						<select name="instance_type">
+								<option value="" selected >Escolha...</option>
+						<?php
 
-				?>
-				</select>
-				
-				<input type="submit" value="Enviar" name="submit"/>
+							$mainPath = "../data/instances/";
+							$folders = array_slice (scandir($mainPath), 2);
 
-			</form>
+							foreach ($folders as $folder) {
+								echo "<option value='".$folder."'>" . $folder . "</option>";	
+							}
+
+						?>
+						</select>
+						
+						<input type="submit" value="Enviar" name="submit"/>
+
+					</form>
+
+				</div>
+
+				<div class="form">
+
+					<h2>Remover Instâncias</h2>
+
+					<form enctype="multipart/form-data" action="tsp-remove.php" method="POST">
+
+						<p>Pertence a:</p>
+						<select name="instance_type">
+								<option value="" selected >Escolha...</option>
+						<?php
+
+							$mainPath = "../data/instances/";
+							$folders = array_slice (scandir($mainPath), 2);
+
+							foreach ($folders as $folder) {
+								echo "<option value='".$folder."'>" . $folder . "</option>";	
+							}
+
+						?>
+						</select>
+						
+						<input type="submit" value="Enviar" name="submit"/>
+
+					</form>
+
+				</div>
+
+			</div>
+
+			<?php
+				include "../src/imports/footer.php";
+			?>
 
 		</div>
-
-		<?php
-			include "Controllers/footer.php";
-		?>
 
 	</body>
 
