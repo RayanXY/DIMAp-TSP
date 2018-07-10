@@ -6,14 +6,14 @@
 			include "imports/import.php";
 		?>
 
-		<title>Administrador</title>
+		<title>Administrator</title>
 
 	</head>
 
 	<body onload="myFunc();">
 
 		<?php
-			include "../src/imports/menu.php";
+			include "../src/imports/menu_en.php";
 		?>
 
 		<div id="wrapper">
@@ -22,11 +22,11 @@
 
 				<div class="form">
 
-					<h2>Upload de instâncias</h2>
+					<h2>Instances Upload</h2>
 
 					<form enctype="multipart/form-data" action="controllers/upload.php" method="POST">
 
-						<p>Instâncias:</p>
+						<p>Instances:</p>
 						
 							<input type="text" id="input-text" class="upload-text" readonly>
 
@@ -45,10 +45,10 @@
 
 						?>
 
-						<p>De qual tamanho:</p>
+						<p>Of what size:</p>
 
 						<select name="exists_size" id="size_select">
-								<option value="" selected >Escolha...</option>
+								<option value="" selected >Choose...</option>
 							
 						<?php
 
@@ -65,21 +65,21 @@
 						?>
 						</select>
 
-						Novo tamanho? 
-						<input type="radio" name="new_size" value="yes" onchange = "showText ()">Sim
-						<input type="radio" name="new_size" value="no" onchange = "showText ()" checked>Não
+						New size? 
+						<input type="radio" name="new_size" value="yes" onchange = "showText ()">Yes
+						<input type="radio" name="new_size" value="no" onchange = "showText ()" checked>No
 
 						<br/>
 
 						<div id="new_size_text" style="visibility: hidden">
-							Qual?
+							Which?
 							<input type="text" name="new_size_text" >
 						</div>
 
 						<br/>
 						<br/>
 						
-						<input type="submit" value="Enviar" name="submit"/>
+						<input type="submit" value="Submit" name="submit"/>
 
 					</form>
 
@@ -90,7 +90,7 @@
 		</div>
 
 		<?php
-			include "../src/imports/footer.php";
+			include "../src/imports/footer_en.php";
 		?>
 
 	</body>

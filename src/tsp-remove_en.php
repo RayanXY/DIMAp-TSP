@@ -6,14 +6,14 @@
 			include "imports/import.php";
 		?>
 
-		<title>Administrador</title>
+		<title>Administrator</title>
 
 	</head>
 
 	<body onload="myFunc();">
 
 		<?php
-			include "../src/imports/menu.php";
+			include "../src/imports/menu_en.php";
 		?>
 
 		<div id="wrapper">
@@ -22,13 +22,13 @@
 
 				<div class="form">
 
-					<h2>Remover Instâncias</h2>
+					<h2>Instances Remove</h2>
 
 					<form enctype="multipart/form-data" action="controllers/remove.php" method="POST">
 
-						<p>Qual o tipo:</p>
+						<p>What type:</p>
 						<select name="instance_size">
-								<option value="" selected >Escolha...</option>
+								<option value="" selected >Choose...</option>
 							
 						<?php
 
@@ -56,7 +56,7 @@
 		</div>
 
 		<?php
-			include "../src/imports/footer.php";
+			include "../src/imports/footer_en.php";
 		?>
 
 	</body>

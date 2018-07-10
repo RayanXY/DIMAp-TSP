@@ -5,21 +5,21 @@
 		<?php
 			include "imports/import.php";
 		?>
-		<title>PCV - Passengeiro e Quota</title>
+		<title>TSP - Passanger and Quota</title>
 
 	</head>
 
 	<body onload="accordion()">
 
 		<?php
-			include "../src/imports/menu.php";
+			include "../src/imports/menu_en.php";
 		?>
 
 		<div id="wrapper">
 
 			<div class="content">
 				
-				<h2>O Problema do Caixeiro Viajante com Passageiro e Quota</h2>
+				<h2>The Quota Traveling Salesman Problem with Passanger</h2>
 
 				<p>O conjunto de instâncias são divididas em 3 grupos, que possuem simétricas e assimétricas com os seguintes tamanhos: 10, 20, 30, 40, 50 e 100, geradas a partir de um gerador de instâncias desenvolvido com as respectivas características gerais: peso das arestas e bônus dos vértices do grafo definido aleatoriamente, utilizando uma distribuição uniforme a partir do intervalo: 100 a 250 e 0 a 250 respectivamente; capacidade de passageiros no carro: 3, 4 e 5; quantidade de passageiros por vértice: de zero a uma ou duas vezes a capacidade do carro.</p>
 
@@ -27,7 +27,7 @@
 
 				<p>A nomeação das instâncias foi realizada utilizando a seguinte estrutura: x-tam-quantP-capacidade-grupo onde x = simétrica - s ou assimétrica - a; tam = quantidade de vértices no grafo; quantP = quantidade de passageiros; capacidade = capacidade de passageiros no carro e grupo = grupo da instância.</p>
 
-				<h3>Conteúdo das instâncias:</h3>
+				<h3>Instance's Contents:</h3>
 				<ul>
 					<li>A primeira linha é composta pelo tamanho do grafo, quantidade de passageiros e capacidade do carro respectivamente;</li>
 					<li>Na sequência, possui o peso das arestas do grafo;</li>
@@ -36,7 +36,7 @@
 					<li>E finalizando, os bônus dos vértices, apresentados um por linha compostas pelo número do vértice e valor do bônus respectivamente;</li>
 				</ul>
 
-				<h3>Instâncias:</h3>
+				<h3>Insances:</h3>
 
 			<?php
 
@@ -74,7 +74,7 @@
 			</div>
 			
 			<?php
-				include "../src/imports/footer.php";
+				include "../src/imports/footer_en.php";
 			?>
 
 		</div>

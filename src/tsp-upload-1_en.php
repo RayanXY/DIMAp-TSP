@@ -6,14 +6,14 @@
 			include "imports/import.php";
 		?>
 
-		<title>Administrador</title>
+		<title>Administrator</title>
 
 	</head>
 
 	<body onload="myFunc();">
 
 		<?php
-			include "../src/imports/menu.php";
+			include "../src/imports/menu_en.php";
 		?>
 
 		<div id="wrapper">
@@ -22,13 +22,13 @@
 
 				<div class="form">
 
-					<h2>Upload de instâncias</h2>
+					<h2>Instances Upload</h2>
 
 					<form enctype="multipart/form-data" action="tsp-upload-2.php" method="POST">
 
-						<p>Pertence a:</p>
+						<p>Belong to:</p>
 						<select name="instance_type">
-								<option value="" selected >Escolha...</option>
+								<option value="" selected >Choose...</option>
 						<?php
 
 							$mainPath = "../data/instances/";
@@ -49,13 +49,13 @@
 
 				<div class="form">
 
-					<h2>Remover Instâncias</h2>
+					<h2>Instances Remove</h2>
 
 					<form enctype="multipart/form-data" action="tsp-remove.php" method="POST">
 
-						<p>Pertence a:</p>
+						<p>Belong to:</p>
 						<select name="instance_type">
-								<option value="" selected >Escolha...</option>
+								<option value="" selected >Choose...</option>
 						<?php
 
 							$mainPath = "../data/instances/";
@@ -77,7 +77,7 @@
 			</div>
 
 			<?php
-				include "../src/imports/footer.php";
+				include "../src/imports/footer_en.php";
 			?>
 
 		</div>
